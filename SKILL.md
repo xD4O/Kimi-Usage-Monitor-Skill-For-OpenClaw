@@ -22,13 +22,18 @@ Monitor Kimi K2.5 usage quotas from the Kimi console to make informed decisions 
 3. Ensure you're logged into Kimi
 
 ```bash
-# Check current usage
-cd kimi-usage-monitor
+# Check current usage (Linux/macOS/WSL)
 ./check_usage.sh
 
-# JSON output for automation
+# Windows native
+check_usage.bat           # CMD
+.\check_usage.ps1         # PowerShell
+
+# JSON output for automation (all platforms)
 python3 scripts/fetch_usage.py --json
 ```
+
+**Platform Support:** Linux ✅ | macOS ✅ | Windows (WSL) ✅ | Windows (Native) ✅
 
 ## Usage Data Available
 

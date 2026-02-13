@@ -1,4 +1,4 @@
-# Kimi Usage Monitor created by (https://github.com/xD4O / https://x.com/_cyr4x )
+# Kimi Usage Monitor
 
 A lightweight skill for monitoring Kimi K2.5 API usage and making autonomous resource decisions.
 
@@ -9,21 +9,41 @@ A lightweight skill for monitoring Kimi K2.5 API usage and making autonomous res
 - ✈️ Pre-flight checks for intensive operations
 - 🤖 Subagent spawn guards
 - 📈 JSON output for automation
+- 💻 Cross-platform (Linux, macOS, Windows/WSL)
 
 ## Requirements
 
+- Python 3.8+
 - OpenClaw with browser control enabled
 - Chrome with OpenClaw extension attached
 - Active Kimi account session
 
+## Platform Support
+
+| Platform | Command | Status |
+|----------|---------|--------|
+| Linux | `./check_usage.sh` | ✅ |
+| macOS | `./check_usage.sh` | ✅ |
+| Windows (WSL) | `./check_usage.sh` | ✅ |
+| Windows (Native) | `check_usage.bat` | ✅ |
+| Windows (PowerShell) | `.\check_usage.ps1` | ✅ |
+
+See [PLATFORM_SUPPORT.md](PLATFORM_SUPPORT.md) for detailed compatibility information.
+
 ## Quick Start
 
 ```bash
-# Check current usage
+# Check current usage (Linux/macOS/WSL)
 ./check_usage.sh
 
+# Check current usage (Windows CMD)
+check_usage.bat
+
+# Check current usage (Windows PowerShell)
+.\check_usage.ps1
+
 # Get JSON output for scripts
-./check_usage.sh --json
+python3 scripts/fetch_usage.py --json
 
 # Check before intensive work
 python3 scripts/preflight_check.py intensive
